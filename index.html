@@ -1,103 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KernelCoin – KernelCon Cyber Security Token</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #121212;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top, #0a0a0a 40%, #000 100%);
       color: #e0e0e0;
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-      color: #2ad6ff;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #aaaaaa;
-    }
-    .hero {
       display: flex;
+      align-items: center;
       justify-content: center;
-      padding: 20px;
+      height: 100vh;
+      overflow: hidden;
     }
-    .hero img {
-      max-width: 200px;
-      width: 100%;
+
+    .card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background: rgba(20, 20, 20, 0.8);
+      border: 1px solid #2ad6ff33;
+      border-radius: 16px;
+      box-shadow: 0 0 30px #2ad6ff33;
+      padding: 30px 40px;
+      gap: 40px;
+      max-width: 900px;
+      width: 90%;
+    }
+
+    img {
+      width: 240px;
       height: auto;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #2ad6ff55;
     }
-    .content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
+
+    .text {
+      max-width: 500px;
     }
-    .content h2 {
+
+    h1 {
       color: #2ad6ff;
+      margin-bottom: 8px;
+      font-size: 2rem;
     }
+
+    h2 {
+      color: #7fffd4;
+      font-size: 1.2rem;
+      margin-top: 0;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
     .cta {
-      text-align: center;
-      margin: 40px 0;
+      margin-top: 16px;
     }
+
     .cta a {
       display: inline-block;
-      padding: 14px 28px;
+      padding: 10px 20px;
       background-color: #2ad6ff;
       color: #121212;
       text-decoration: none;
+      border-radius: 6px;
       font-weight: bold;
-      border-radius: 4px;
+      transition: all 0.2s ease-in-out;
     }
+
+    .cta a:hover {
+      background-color: #00ffff;
+    }
+
     footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
       text-align: center;
-      padding: 30px 10px;
-      font-size: 0.9rem;
-      color: #777777;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        height: auto;
+        padding: 30px 0;
+        overflow-y: auto;
+      }
+      .card {
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+      }
+      img {
+        width: 180px;
+      }
     }
   </style>
 </head>
+
 <body>
-
-<header>
-  <h1>KernelCoin</h1>
-  <p>The official coin of <em>KernelCon</em></p>
-</header>
-
-<div class="hero">
-  <!-- Replace with your coin artwork file -->
-  <img src="kernelcoin-logo.jpg" alt="KernelCoin logo">
-</div>
-
-<div class="content">
-  <h2>What is KernelCoin?</h2>
-  <p>KernelCoin is a custom digital token created for KernelCon attendees. It represents access, rewards, and participation in the KernelCon ecosystem. Whether you're attending training, participating in CTFs, or engaging with speakers and vendors, KernelCoin is your badge of honour for this year’s event.</p>
-
-  <h2>Token Utilities</h2>
-  <ul>
-    <li>Rewards in the CTF and hacker villages.</li>
-    <li>Special discounts or freebies from vendor partners at the show.</li>
-    <li>A commemorative digital badge you can keep as a memory of the conference.</li>
-  </ul>
-
-  <h2>How to Claim</h2>
-  <p>KernelCoin is a freshly minted coin, start mining today!</p>
-
-  <div class="cta">
-    <a href="https://kernelcon.org/register" target="_blank">Register for KernelCon</a>
+  <div class="card">
+    <img src="kernelcoin-logo.jpg" alt="KernelCoin logo" />
+    <div class="text">
+      <h1>KernelCoin</h1>
+      <h2>The Official Token of KernelCon</h2>
+      <p>
+        A commemorative digital coin for attendees of the KernelCon cybersecurity conference —
+        symbolizing innovation, collaboration, and the power of the hacker community. Start mining today!
+      </p>
+      <div class="cta">
+        <a href="https://kernelcon.org" target="_blank">Visit KernelCon.org</a>
+      </div>
+    </div>
   </div>
-</div>
-
-<footer>
-  <p>&copy; 2026 KernelCon. All rights reserved.</p>
-</footer>
-
+  <footer>© KernelCoin</footer>
 </body>
 </html>
