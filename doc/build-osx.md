@@ -66,7 +66,7 @@ brew install berkeley-db4
 
 1. Clone the Kernelcoin Core source code:
     ```shell
-    git clone https://github.com/kernelcoin-project/kernelcoin
+    git clone https://github.com/kernelcoinproject/kernelcoin
     cd kernelcoin
     ```
 

@@ -7,7 +7,7 @@ updates. It is recommended to upgrade to this version.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/kernelcoin-project/kernelcoin/issues>
+  <https://github.com/kernelcoinproject/kernelcoin/issues>
 
 Upgrading and downgrading
 =========================

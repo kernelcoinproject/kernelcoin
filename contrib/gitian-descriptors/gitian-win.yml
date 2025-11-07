@@ -24,7 +24,7 @@ packages:
 - "ca-certificates"
 - "python3"
 remotes:
-- "url": "https://github.com/kernelcoin-project/kernelcoin.git"
+- "url": "https://github.com/kernelcoinproject/kernelcoin.git"
   "dir": "kernelcoin"
 files: []
 script: |

@@ -1,7 +1,7 @@
 Kernelcoin Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/kernelcoin-project/kernelcoin.svg?branch=master)](https://travis-ci.org/kernelcoin-project/kernelcoin)
+[![Build Status](https://travis-ci.org/kernelcoinproject/kernelcoin.svg?branch=master)](https://travis-ci.org/kernelcoinproject/kernelcoin)
 
 https://kernelcoin.org
 
@@ -27,10 +27,10 @@ Development Process
 -------------------
 
 The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be
-completely stable. [Tags](https://github.com/kernelcoin-project/kernelcoin/tags) are created
+completely stable. [Tags](https://github.com/kernelcoinproject/kernelcoin/tags) are created
 regularly from release branches to indicate new official, stable release versions of Kernelcoin Core.
 
-The https://github.com/kernelcoin-project/gui repository is used exclusively for the
+The https://github.com/kernelcoinproject/gui repository is used exclusively for the
 development of the GUI. Its master branch is identical in all monotree
 repositories. Release branches and tags do not exist, so please do not fork
 that repository unless it is for development reasons.

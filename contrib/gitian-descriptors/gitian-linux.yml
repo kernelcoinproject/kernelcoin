@@ -32,7 +32,7 @@ packages:
 - "binutils-riscv64-linux-gnu"
 - "g++-8-riscv64-linux-gnu"
 remotes:
-- "url": "https://github.com/kernelcoin-project/kernelcoin.git"
+- "url": "https://github.com/kernelcoinproject/kernelcoin.git"
   "dir": "kernelcoin"
 files: []
 script: |

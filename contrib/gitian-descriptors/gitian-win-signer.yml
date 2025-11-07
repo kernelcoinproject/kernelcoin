@@ -12,7 +12,7 @@ packages:
 - "libtool"
 - "pkg-config"
 remotes:
-- "url": "https://github.com/kernelcoin-project/kernelcoin-detached-sigs.git"
+- "url": "https://github.com/kernelcoinproject/kernelcoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "osslsigncode-2.0.tar.gz"

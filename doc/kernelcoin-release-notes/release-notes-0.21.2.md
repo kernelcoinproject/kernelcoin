@@ -6,7 +6,7 @@ This is the largest update ever, providing full node, wallet, and mining support
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/kernelcoin-project/kernelcoin/issues>
+  <https://github.com/kernelcoinproject/kernelcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
@@ -44,9 +44,9 @@ Consensus changes
 -----------------
 
 - This release implements the proposed MWEB consensus rules
-  ([LIP002](https://github.com/kernelcoin-project/lips/blob/master/lip-0002.mediawiki),
-  [LIP003](https://github.com/kernelcoin-project/lips/blob/master/lip-0003.mediawiki), and
-  [LIP004](https://github.com/kernelcoin-project/lips/blob/master/lip-0004.mediawiki))
+  ([LIP002](https://github.com/kernelcoinproject/lips/blob/master/lip-0002.mediawiki),
+  [LIP003](https://github.com/kernelcoinproject/lips/blob/master/lip-0003.mediawiki), and
+  [LIP004](https://github.com/kernelcoinproject/lips/blob/master/lip-0004.mediawiki))
 
 P2P and network changes
 -----------------------

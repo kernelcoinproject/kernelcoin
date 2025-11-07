@@ -7,7 +7,7 @@ In this update to Kernelcoin Core, Taproot has been activated, enhancing Kernelc
 
 Kernelcoin Core 0.21.1 is available now, right here: <https://download.kernelcoin.org/kernelcoin-0.21.1/>.
 
-As always, we welcome the expertise of the community. To report bugs please use the issue tracker at GitHub - <https://github.com/kernelcoin-project/kernelcoin/issues > - and to get security and update notifications subscribe via <https://groups.google.com/forum/#!forum/kernelcoin-dev>. 
+As always, we welcome the expertise of the community. To report bugs please use the issue tracker at GitHub - <https://github.com/kernelcoinproject/kernelcoin/issues > - and to get security and update notifications subscribe via <https://groups.google.com/forum/#!forum/kernelcoin-dev>. 
 
 Anyone can contribute to Kernelcoin Core. Please scroll down to ‘How to contribute to Kernelcoin Core’ for details.
 

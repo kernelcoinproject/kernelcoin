@@ -6,7 +6,7 @@ This is a new patch version release that includes important security updates.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/kernelcoin-project/kernelcoin/issues>
+  <https://github.com/kernelcoinproject/kernelcoin/issues>
 
 Notable changes
 ===============

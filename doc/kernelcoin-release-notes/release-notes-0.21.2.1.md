@@ -6,7 +6,7 @@ This includes a critical bug fix for upgraded wallets to receive via MWEB.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/kernelcoin-project/kernelcoin/issues>
+  <https://github.com/kernelcoinproject/kernelcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 

@@ -7,7 +7,7 @@ It is recommended to upgrade to this version.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/kernelcoin-project/kernelcoin/issues>
+  <https://github.com/kernelcoinproject/kernelcoin/issues>
 
 Compatibility
 ==============
@@ -64,7 +64,7 @@ Testnet faucets can be located at:
 - http://testnet.kernelcointools.com
 - http://testnet.thrasher.io
 
-Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/kernelcoin-project/kernelcoin/blob/0.13/src/chainparams.cpp#L214).
+Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/kernelcoinproject/kernelcoin/blob/0.13/src/chainparams.cpp#L214).
 
 Credits
 =======
