@@ -395,7 +395,7 @@ bool TxAssembler::AttemptCoinSelection(InProcessTx& new_tx, const CAmount& nTarg
         new_tx.coin_selection_params.change_spend_size = (size_t)change_spend_size;
     }
 
-    static auto is_ltc = [](const CInputCoin& input) { return !input.IsMWEB(); };
+    static auto is_kcn = [](const CInputCoin& input) { return !input.IsMWEB(); };
     static auto is_mweb = [](const CInputCoin& input) { return input.IsMWEB(); };
 
     if (new_tx.recipients.front().IsMWEB()) {
@@ -422,7 +422,7 @@ bool TxAssembler::AttemptCoinSelection(InProcessTx& new_tx, const CAmount& nTarg
         params_pegin.change_spend_size = change_on_mweb ? 0 : new_tx.coin_selection_params.change_spend_size;
 
         if (SelectCoins(new_tx, nTargetValue, params_pegin)) {
-            return std::any_of(new_tx.selected_coins.cbegin(), new_tx.selected_coins.cend(), is_ltc);
+            return std::any_of(new_tx.selected_coins.cbegin(), new_tx.selected_coins.cend(), is_kcn);
         }
     } else {
         // First try to construct a KCN-to-KCN transaction

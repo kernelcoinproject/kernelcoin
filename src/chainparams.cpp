@@ -137,8 +137,8 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x77, 0x88, 0xB2, 0x1E}; // 77 = random
         base58Prefixes[EXT_SECRET_KEY] = {0x77, 0x88, 0xAD, 0xE4}; // 77 = random
 
-        bech32_hrp = "ltc";
-        mweb_hrp = "ltcmweb";
+        bech32_hrp = "kcn";
+        mweb_hrp = "kcnmweb";
 
         vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_main), std::end(chainparams_seed_main));
 
@@ -233,7 +233,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tltc";
+        bech32_hrp = "tkcn";
         mweb_hrp = "tmweb";
 
         vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_test), std::end(chainparams_seed_test));
@@ -343,7 +343,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "rltc";
+        bech32_hrp = "rkcn";
         mweb_hrp = "tmweb";
     }
 

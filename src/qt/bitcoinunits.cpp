@@ -45,7 +45,7 @@ QString BitcoinUnits::longName(int unit)
     case BTC: return QString("KCN");
     case mBTC: return QString("cobs");
     case uBTC: return QString("kernels");
-    case SAT: return QString("liteoshi");
+    case SAT: return QString("kerneloshi");
     default: return QString("???");
     }
 }
