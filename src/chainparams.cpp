@@ -52,7 +52,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Dick Cheney Dies Nov 3 2025";
+    const char* pszTimestamp = "Nov 11 2025 Mega Millions 13-40-42-46-10";
     const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -113,10 +113,10 @@ public:
         m_assumed_blockchain_size = 40;
         m_assumed_chain_state_size = 2;
 
-        genesis = CreateGenesisBlock(1762400839, 2088609785, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1762924663, 695854, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x188d4c4cb9374529e191507bff4d7cf8b12512b1407803da1c5169464d6768d5"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb6cf298aae6d8b70883023031942c56fd6a8aa67587c224cec392af33a217c97"));
+        assert(consensus.hashGenesisBlock == uint256S("0x8b8607b29b8933f32880a584f87ae58a853704ff674fa1da70489bbb4f2abf66"));
+        assert(genesis.hashMerkleRoot == uint256S("0x0adea570035406fbcfd985a32d78f112770a9482fd0b442783381b671f241be2"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -215,10 +215,10 @@ public:
         m_assumed_blockchain_size = 4;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1762400839, 189035, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1762925197, 871458, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x6ff021d6382ad225068aa4d1e5942b91d79f066b6425ad5273a1891c68daecee"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb6cf298aae6d8b70883023031942c56fd6a8aa67587c224cec392af33a217c97"));
+        assert(consensus.hashGenesisBlock == uint256S("0x70c3609572fe7c8989a78cc2d13cace19885ffa57118c9a071d1336e072e4da2"));
+        assert(genesis.hashMerkleRoot == uint256S("0x0adea570035406fbcfd985a32d78f112770a9482fd0b442783381b671f241be2"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -235,9 +235,10 @@ public:
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
         bech32_hrp = "tkcn";
-        mweb_hrp = "tmweb";
+        mweb_hrp = "tkcnweb";
 
         vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_test), std::end(chainparams_seed_test));
+        vFixedSeeds.clear()
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
@@ -252,9 +253,9 @@ public:
 
         chainTxData = ChainTxData{
             // Data from RPC: getchaintxstats 4096 36d8ad003bac090cf7bf4e24fbe1d319554c8933b9314188d6096ac12648764d
-            /* nTime    */ 1607986972,
-            /* nTxCount */ 4229067,
-            /* dTxRate  */ 0.06527021772939347,
+            /* nTime    */ 1762925197,
+            /* nTxCount */ 0,
+            /* dTxRate  */ 0.0,
         };
     }
 };
@@ -312,10 +313,10 @@ public:
 
         UpdateActivationParametersFromArgs(args);
 
-        genesis = CreateGenesisBlock(1762400839, 10434837, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1762925722, 3, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x9a931c9b150f44bf773eee272dee21aaed9acad11d4547315c10785dad7fd3be"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb6cf298aae6d8b70883023031942c56fd6a8aa67587c224cec392af33a217c97"));
+        assert(consensus.hashGenesisBlock == uint256S("0x8318137e635b5b29967519ea3524f14c7d56cb3c2216c4084138745f44ab6281"));
+        assert(genesis.hashMerkleRoot == uint256S("0x0adea570035406fbcfd985a32d78f112770a9482fd0b442783381b671f241be2"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -345,7 +346,7 @@ public:
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
         bech32_hrp = "rkcn";
-        mweb_hrp = "tmweb";
+        mweb_hrp = "rkcnmweb";
     }
 
     /**
