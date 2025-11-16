@@ -6,4 +6,7 @@ A commemorative digital coin for attendees of the KernelCon cybersecurity confer
 
 kerenelcon.org
 
-This is a [hard fork of litecoin from 11/5/2025](https://www.hackster.io/pjdecarlo/how-to-make-a-cryptocurrency-using-litecoin-v0-15-source-fb5e82)
+This is a hard fork of litecoin v21.4 taken 11/5/2025
+
+# Mining
+See our ![mining_guide](mining_guide.md)
