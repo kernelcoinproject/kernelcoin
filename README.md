@@ -1,8 +1,8 @@
 # KernelCoin
 
-The Official Token of KernelCon
+The Official Token of Kernelcon
 
-A commemorative digital coin for attendees of the KernelCon cybersecurity conference — symbolizing innovation, collaboration, and the power of the hacker community. Start mining today!
+A commemorative digital coin for attendees of the Kernelcon cybersecurity conference — symbolizing innovation, collaboration, and the power of the hacker community. Start mining today!
 
 kerenelcon.org
 
