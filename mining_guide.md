@@ -41,6 +41,8 @@ My ryzen 5 3600 cpu gives me ~57kH/s
 ## GPU
 1. Build your own mining pool
 
+I'll spare you the effort, I did not have good luck with yiimp, nomp, or coiniumserv. With some tweaks I managed to get MiningCore working. 
+
 ```
 docker run -it -p 4000:4000 -p 4066:4066 -p 4067:4067 -p 3333:3333 --rm ubuntu:22.04 bash
 apt update
