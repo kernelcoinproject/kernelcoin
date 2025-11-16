@@ -302,7 +302,7 @@ With an nvidia gpu I was able to use https://github.com/tpruvot/ccminer/releases
 .\ccminer-x64.exe -a scrypt -o stratum+tcp://192.168.0.186:3333 -u kcn1qc6urf9kvx2m3xvzlnwvla09v9rlkfv0pn2lph2 -p x
 ```
 
-With amd gpu I was able to get 200kH/s on a very old 7790 Sapphire
+With an amd gpu I was able to get 200kH/s on a very old 7790 Sapphire
 ```
 cgminer.exe --scrypt -o stratum+tcp://192.168.0.186:3333 -u K7tWowKEAPTQAXcJTo2z7qihAe74vak4ib -p x
 ```
@@ -312,6 +312,8 @@ Additional flags to cgminer matter a lot for speed.
 ```
 -I 17 -g 1 -w 128 --thread-concurrency 8000
 ```
+
+YMMV!
 
 You might be able to use other software as well with extensive modifications :)
 
