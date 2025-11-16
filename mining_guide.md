@@ -228,7 +228,7 @@ sed -i '1r /dev/stdin' build/coins.json <<'EOF'
 EOF
 ./build/Miningcore -c kernelcoin.json
 ```
-2. Spin up a proxy to modify requests from Miningcore to your local rpc daemon
+2. Spin up a proxy to modify requests from Miningcore to your local rpc daemon. You could probably patch miningcore somewhere as well https://github.com/jon4hz/miningcore-foss/commits/ltc-fix
 
 ```
 cat > proxy.py << EOF
