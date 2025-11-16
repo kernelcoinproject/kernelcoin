@@ -36,6 +36,7 @@ Mine away to your wallet address
 ./cpuminer-zen2 -a scrypt --url=http://127.0.0.1:9333 --user=mike --pass=x --coinbase-addr=K7tWowKEAPTQAXcJTo2z7qihAe74vak4ib
 .\cpuminer-avx2.exe -a scrypt --url=http://127.0.0.1:9332 --user=mike --pass=x --coinbase-addr=kcn1q5vh476x8gplnmsyklyd0zqhw4akp7kzj72anvu 
 ```
+My ryzen 5 3600 cpu gives me ~57kH/s
 
 ## GPU
 1. Build your own mining pool
@@ -170,7 +171,7 @@ cat > /miningcore/kernelcoin.json << EOF
   ]
 } 
 EOF
-nano build/coins.json
+sed -i '1r /dev/stdin' build/coins.json <<'EOF'
 "kernelcoin": {
     "name": "Kernelcoin",
     "canonicalName": "Kernelcoin",
@@ -223,7 +224,8 @@ nano build/coins.json
         "script": [23, 25],
         "bech": "kcn"
     }
-}
+},
+EOF
 ./build/Miningcore -c kernelcoin.json
 ```
 2. Spin up a proxy to modify requests from Miningcore to your local rpc daemon
@@ -294,13 +296,13 @@ Test mining pool with cpuminer-opt
 ./cpuminer-zen2 -a scrypt -o stratum+tcp://127.0.0.1:3333 -u K7tWowKEAPTQAXcJTo2z7qihAe74vak4ib -p x
 ```
 
-Then with nvidia gpu https://github.com/tpruvot/ccminer/releases
+With an nvidia gpu I was able to use https://github.com/tpruvot/ccminer/releases to get 600kH/s on my rtx 3050
 
 ```
 .\ccminer-x64.exe -a scrypt -o stratum+tcp://192.168.0.186:3333 -u kcn1qc6urf9kvx2m3xvzlnwvla09v9rlkfv0pn2lph2 -p x
 ```
 
-With amd gpu
+With amd gpu I was able to get 200kH/s on a very old 7790 Sapphire
 ```
 cgminer.exe --scrypt -o stratum+tcp://192.168.0.186:3333 -u K7tWowKEAPTQAXcJTo2z7qihAe74vak4ib -p x
 ```
@@ -310,7 +312,6 @@ Additional flags to cgminer matter a lot for speed.
 ```
 -I 17 -g 1 -w 128 --thread-concurrency 8000
 ```
-Gives me 200kH/s on a 7790
 
 You might be able to use other software as well with extensive modifications :)
 
