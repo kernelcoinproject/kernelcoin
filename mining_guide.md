@@ -41,7 +41,11 @@ My ryzen 5 3600 cpu gives me ~57kH/s
 ## GPU
 1. Build your own mining pool
 
-I'll spare you the effort, I did not have good luck with yiimp, nomp, or coiniumserv. With some tweaks I managed to get MiningCore working. 
+I'll spare you the effort, I did not have good luck with [yiimp](https://github.com/tpruvot/yiimp), [nomp](https://github.com/meterio/nomp), or [coiniumserv](https://github.com/bonesoul/CoiniumServ), or trying to write my own based off a [ravencoin proxy](https://github.com/kralverde/ravencoin-stratum-proxy)
+
+I didn't explore https://github.com/Crypto-Expert/stratum-mining
+
+With some tweaks I managed to get MiningCore working. 
 
 ```
 docker run -it -p 4000:4000 -p 4066:4066 -p 4067:4067 -p 3333:3333 --rm ubuntu:22.04 bash
@@ -319,7 +323,7 @@ YMMV!
 
 You might be able to use other software as well with extensive modifications :)
 
-Kernelcoin is a fork from ltc 21.4 and currently has segwit enabled, but a nonactive mweb. Your pool/miner needs to be aware of gbt and mweb from 2022 to be able mine properly.
+Kernelcoin is a fork from ltc 21.4 and currently has segwit enabled, but a nonactive mweb. Your pool/miner needs to be aware of gbt and mweb from 2022 to be able to mine properly.
 
 ## ASIC
 
