@@ -7,7 +7,7 @@
 Start a RPC daemon
 ```
 mkdir -p ~/.kernelcoin 
-cat > ~/.kernelcoin/kernelcoind.conf << EOF 
+cat > ~/.kernelcoin/kernelcoin.conf << EOF 
 # enable p2p
 listen=1
 # debug log details about transactions
