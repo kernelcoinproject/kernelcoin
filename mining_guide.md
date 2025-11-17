@@ -26,6 +26,32 @@ EOF
 ./kernelcoind
 ```
 
+Setup a proxy to modify requests to add mweb
+```
+#!/usr/bin/env python3
+import aiohttp, asyncio, json
+from aiohttp import web
+
+RPC_URL = "http://127.0.0.1:9332"
+RPC_AUTH = aiohttp.BasicAuth("mike", "x")
+
+async def handle(request):
+    data = await request.json()
+    if data.get("method") == "getblocktemplate":
+        data["params"] = [{"rules": ["segwit", "mweb"]}]
+    async with aiohttp.ClientSession(auth=RPC_AUTH) as s:
+        async with s.post(RPC_URL, json=data) as r:
+            result = await r.text()
+    return web.Response(text=result, content_type="application/json")
+
+app = web.Application()
+app.router.add_post("/", handle)
+web.run_app(app, port=9333)
+```
+```
+python3 proxy.py
+```
+
 Generate a wallet address either via gui or cli
 ```
 ./kernelcoin-cli createwallet "main"
@@ -34,7 +60,7 @@ Generate a wallet address either via gui or cli
 Mine away to your wallet address
 ```
 ./cpuminer-zen2 -a scrypt --url=http://127.0.0.1:9333 --user=mike --pass=x --coinbase-addr=K7tWowKEAPTQAXcJTo2z7qihAe74vak4ib
-.\cpuminer-avx2.exe -a scrypt --url=http://127.0.0.1:9332 --user=mike --pass=x --coinbase-addr=kcn1q5vh476x8gplnmsyklyd0zqhw4akp7kzj72anvu 
+.\cpuminer-avx2.exe -a scrypt --url=http://127.0.0.1:9333 --user=mike --pass=x --coinbase-addr=kcn1q5vh476x8gplnmsyklyd0zqhw4akp7kzj72anvu 
 ```
 My ryzen 5 3600 cpu gives me ~57kH/s
 
