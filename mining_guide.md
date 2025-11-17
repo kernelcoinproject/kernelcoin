@@ -75,16 +75,18 @@ With some tweaks I managed to get MiningCore working.
 
 ```
 docker run -it -p 4000:4000 -p 4066:4066 -p 4067:4067 -p 3333:3333 --rm ubuntu:22.04 bash
+
+echo "America/Chicago" > /etc/timezone
+ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime
 apt update
-apt install -y git dotnet-sdk-6.0 git cmake build-essential libssl-dev pkg-config libboost-all-dev libsodium-dev libzmq5 nano
+apt install -y git dotnet-sdk-6.0 git cmake build-essential libssl-dev pkg-config libboost-all-dev libsodium-dev libzmq5 nano tzdata postgresql
+
 git clone https://github.com/oliverw/miningcore.git
 cd miningcore/src/Miningcore
 BUILDIR=${1:-../../build}
 echo "Building into $BUILDIR" 
 dotnet publish -c Release --framework net6.0 -o $BUILDIR
 
-# plug in your timezone
-apt install -y postgresql
 pg_ctlcluster 14 main start
 su postgres
 psql
