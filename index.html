@@ -5,116 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kernelcoin – Kernelcon Cyber Security Token</title>
   <style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: radial-gradient(circle at top, #0a0a0a 40%, #000 100%);
+    color: #e0e0e0;
+
+    /* Fix footer using flexbox layout */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid #2ad6ff33;
+    border-radius: 16px;
+    box-shadow: 0 0 30px #2ad6ff33;
+    padding: 30px 40px;
+    gap: 40px;
+    max-width: 900px;
+    width: 90%;
+  }
+
+  img {
+    width: 240px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #2ad6ff55;
+  }
+
+  .text {
+    max-width: 500px;
+  }
+
+  h1 {
+    color: #2ad6ff;
+    margin-bottom: 8px;
+    font-size: 2rem;
+  }
+
+  h2 {
+    color: #7fffd4;
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  p {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  p a {
+    color: #2ad6ff;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
+  }
+
+  p a:hover {
+    color: #00ffff;
+  }
+
+  .cta {
+    margin-top: 16px;
+  }
+
+  .cta a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2ad6ff;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .cta a:hover {
+    background-color: #00ffff;
+  }
+
+  footer {
+    margin-top: auto;        /* Push to bottom */
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  @media (max-width: 700px) {
     body {
-      margin: 0;
-      font-family: "Segoe UI", Roboto, sans-serif;
-      background: radial-gradient(circle at top, #0a0a0a 40%, #000 100%);
-      color: #e0e0e0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
+      justify-content: flex-start; /* Important: avoids centering whole page */
+      padding: 30px 0;
     }
 
     .card {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      background: rgba(20, 20, 20, 0.8);
-      border: 1px solid #2ad6ff33;
-      border-radius: 16px;
-      box-shadow: 0 0 30px #2ad6ff33;
-      padding: 30px 40px;
-      gap: 40px;
-      max-width: 900px;
-      width: 90%;
+      flex-direction: column;
+      padding: 25px;
+      gap: 20px;
     }
 
     img {
-      width: 240px;
-      height: auto;
-      border-radius: 50%;
-      box-shadow: 0 0 20px #2ad6ff55;
+      width: 180px;
     }
-
-    .text {
-      max-width: 500px;
-    }
-
-    h1 {
-      color: #2ad6ff;
-      margin-bottom: 8px;
-      font-size: 2rem;
-    }
-
-    h2 {
-      color: #7fffd4;
-      font-size: 1.2rem;
-      margin-top: 0;
-    }
-
-    p {
-      margin: 10px 0;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-    p a {
-      color: #2ad6ff;
-      font-weight: 600;
-      text-decoration: underline;
-      transition: color 0.2s ease-in-out;
-    }
-    
-    p a:hover {
-      color: #00ffff;
-    }
-
-    .cta {
-      margin-top: 16px;
-    }
-
-    .cta a {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #2ad6ff;
-      color: #121212;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .cta a:hover {
-      background-color: #00ffff;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #666;
-    }
-
-    @media (max-width: 700px) {
-      body {
-        height: auto;
-        padding: 30px 0;
-        overflow-y: auto;
-      }
-      .card {
-        flex-direction: column;
-        padding: 25px;
-        gap: 20px;
-      }
-      img {
-        width: 180px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
@@ -137,9 +142,7 @@
       </p>
       <h2>Help us grow!</h2>
       <p>
-        <li>Help us by mining the coin</li>
         <li>Help us by accepting kernelcoin as a form of payment for goods or services!
-        <li>Help us create a places to buy and sell kernelcoin!</li>
         <li>Make some merch!</li>
       </p>
       <div class="cta">
