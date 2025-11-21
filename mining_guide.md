@@ -22,6 +22,7 @@ rpcallowip=127.0.0.1
 rpcallowip=192.168.0.0/16
 rpcallowip=172.17.0.0/16
 rpcbind=0.0.0.0
+maxtxfee=0
 EOF
 ./kernelcoind
 ```
@@ -148,6 +149,8 @@ cat > /miningcore/kernelcoin.json << EOF
 
       "address": "KP8Usn6Mz7RnX3rDCvAVf5u1eiLMHGfsyP",
 
+      "rewardRecipients": [], 
+
       "addressPrefixes": {
         "pubkey": [45],
         "script": [23, 25],
@@ -195,6 +198,7 @@ cat > /miningcore/kernelcoin.json << EOF
 
       "paymentProcessing": {
         "enabled": true,
+        "minimumConfirmations": 2,
         "minimumPayment": 1,
         "payoutScheme": "PPLNS",
         "payoutSchemeConfig": {
@@ -211,6 +215,9 @@ sed -i '1r /dev/stdin' build/coins.json <<'EOF'
     "canonicalName": "Kernelcoin",
     "symbol": "KCN",
     "family": "bitcoin",
+    "explorerBlockLink":"https://explorer.kernelcoin.io/block/{0}",
+    "explorerTxLink": "https://explorer.kernelcoin.org/explorer/?search={0}",
+    "explorerAccountLink": "https://explorer.kernelcoin.org/explorer/?search={0}",
     "website": "",
     "market": "",
     "twitter": "",
