@@ -50,7 +50,7 @@ async def handle(request):
 
 app = web.Application()
 app.router.add_post("/", handle)
-web.run_app(app, port=9333)
+web.run_app(app, host="127.0.0.1", port=9333)
 ```
 ```
 python3 proxy.py
