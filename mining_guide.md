@@ -367,7 +367,7 @@ Kernelcoin is a fork from ltc 21.4 and currently has segwit enabled, but a nonac
 
 ## Note on ASIC and GPU Mining
 
-You can mine using asic or gpu hardware, but but please connect it to your own pool as we need to tweak the settings to reduce error rates.
+You can mine using asic or gpu hardware, but but please connect it to your own pool as we need to tweak the settings to reduce error rates especially on asic.
 
 ```
       "ports": {
