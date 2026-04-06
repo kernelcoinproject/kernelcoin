@@ -1,8 +1,9 @@
 # Mining
 
 ## CPU
-- https://github.com/Kudaraidee/cpuminer-opt-kudaraidee/
 - https://github.com/JayDDee/cpuminer-opt
+- Windows build: https://github.com/JayDDee/cpuminer-opt/releases/download/v26.1/cpuminer-opt-26.1-windows.zip
+- Linux build from: https://github.com/kernelcoinproject/cpuminer-opt/releases/download/main/cpuminer-opt-linux.tar.gz
 
 Start a RPC daemon
 ```
@@ -60,10 +61,12 @@ Generate a wallet address either via gui or cli
 ```
 Mine away to your wallet address
 ```
-./cpuminer-zen2 -a scrypt --url=http://127.0.0.1:9333 --user=mike --pass=x --coinbase-addr=K7tWowKEAPTQAXcJTo2z7qihAe74vak4ib
-.\cpuminer-avx2.exe -a scrypt --url=http://127.0.0.1:9333 --user=mike --pass=x --coinbase-addr=kcn1q5vh476x8gplnmsyklyd0zqhw4akp7kzj72anvu 
+./cpuminer-zen2 -a scrypt --url=http://127.0.0.1:9333 --user=mike --pass=x --coinbase-addr=KNkebi6ybfjBUQmZic4naE4rSDjQC1N4AS
+.\cpuminer-avx2.exe -a scrypt --url=http://127.0.0.1:9333 --user=mike --pass=x --coinbase-addr=KNkebi6ybfjBUQmZic4naE4rSDjQC1N4AS
 ```
 My ryzen 5 3600 cpu gives me ~57kH/s
+
+My ryzen 7 9850x3d gives me ~340kH/s
 
 ## GPU
 1. Build your own mining pool
@@ -147,7 +150,7 @@ cat > /miningcore/kernelcoin.json << EOF
 
       "coin": "kernelcoin",
 
-      "address": "KP8Usn6Mz7RnX3rDCvAVf5u1eiLMHGfsyP",
+      "address": "KHA6mo4ufw94wtgRPJhoY8WNbgdbFUQarC",
 
       "rewardRecipients": [], 
 
@@ -215,9 +218,9 @@ sed -i '1r /dev/stdin' build/coins.json <<'EOF'
     "canonicalName": "Kernelcoin",
     "symbol": "KCN",
     "family": "bitcoin",
-    "explorerBlockLink":"https://explorer.kernelcoin.org/block/{0}",
-    "explorerTxLink": "https://explorer.kernelcoin.org/explorer/?search={0}",
-    "explorerAccountLink": "https://explorer.kernelcoin.org/explorer/?search={0}",
+    "explorerBlockLink":"https://explore.kernelcoin.org/block/{0}",
+    "explorerTxLink": "https://explore.kernelcoin.org/explorer/?search={0}",
+    "explorerAccountLink": "https://explore.kernelcoin.org/explorer/?search={0}",
     "website": "",
     "market": "",
     "twitter": "",
@@ -334,18 +337,18 @@ python3 proxy.py
 
 Test mining pool with cpuminer-opt
 ```
-./cpuminer-zen2 -a scrypt -o stratum+tcp://127.0.0.1:3333 -u K7tWowKEAPTQAXcJTo2z7qihAe74vak4ib -p x
+./cpuminer-zen2 -a scrypt -o stratum+tcp://127.0.0.1:3333 -u KNkebi6ybfjBUQmZic4naE4rSDjQC1N4AS -p x
 ```
 
 With an nvidia gpu I was able to use https://github.com/tpruvot/ccminer/releases to get 600kH/s on my rtx 3050
 
 ```
-.\ccminer-x64.exe -a scrypt -o stratum+tcp://192.168.0.186:3333 -u kcn1qc6urf9kvx2m3xvzlnwvla09v9rlkfv0pn2lph2 -p x
+.\ccminer-x64.exe -a scrypt -o stratum+tcp://192.168.0.186:3333 -u KNkebi6ybfjBUQmZic4naE4rSDjQC1N4AS -p x
 ```
 
 With an amd gpu I was able to get 200kH/s on a very old 7790 Sapphire
 ```
-cgminer.exe --scrypt -o stratum+tcp://192.168.0.186:3333 -u K7tWowKEAPTQAXcJTo2z7qihAe74vak4ib -p x
+cgminer.exe --scrypt -o stratum+tcp://192.168.0.186:3333 -u KNkebi6ybfjBUQmZic4naE4rSDjQC1N4AS -p x
 ```
 
 Additional flags to cgminer matter a lot for speed. 
@@ -360,6 +363,26 @@ You might be able to use other software as well with extensive modifications :)
 
 Kernelcoin is a fork from ltc 21.4 and currently has segwit enabled, but a nonactive mweb. Your pool/miner needs to be aware of gbt and mweb from 2022 to be able to mine properly.
 
-## ASIC
+## Note on ASIC and GPU Mining
 
-I don't have one, but I imagine it'll work the same as a gpu, just connect it to your pool
+You can mine using asic or gpu hardware, but but please connect it to your own pool as we need to tweak the settings to reduce error rates.
+
+```
+      "ports": {
+        "4444": {
+          "listenAddress": "0.0.0.0",
+          "difficulty": 1,
+          "varDiff": {
+            "minDiff": 1,
+            "maxDiff": 8,
+            "targetTime": 15,
+            "retargetTime": 30,
+            "variancePercent": 30
+          }
+        }
+      },
+```
+
+## Special Note on Consensus Times
+
+When you mine coins they are considered immature for the first 100 blocks. This means at 2.5min/block you cannot spend any mined coins for 4 hours and you will not get rewards from the pool for 4 hours.
