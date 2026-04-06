@@ -28,6 +28,8 @@ EOF
 ./kernelcoind
 ```
 
+kernelcoin.conf goes in: Windows `%AppData/Kernelcoin` or Linux `~/.kernelcoin` or Mac `~/Library/Application Support/Kernelcoin/`
+
 Setup a proxy to modify requests to add mweb
 ```
 #!/usr/bin/env python3
